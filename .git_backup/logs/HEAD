@@ -1,0 +1,7 @@
+0000000000000000000000000000000000000000 dab86626e87cdf3dda832e395cee3411ef14ace6 Mehreen676 <mehrali676@gmail.com> 1768215494 +0400	commit (initial): Phase III: Todo AI Chatbot with MCP tools
+dab86626e87cdf3dda832e395cee3411ef14ace6 0000000000000000000000000000000000000000 Mehreen676 <mehrali676@gmail.com> 1768215509 +0400	Branch: renamed refs/heads/master to refs/heads/main
+0000000000000000000000000000000000000000 dab86626e87cdf3dda832e395cee3411ef14ace6 Mehreen676 <mehrali676@gmail.com> 1768215509 +0400	Branch: renamed refs/heads/master to refs/heads/main
+dab86626e87cdf3dda832e395cee3411ef14ace6 758ea8494c6a94dbf064be7a8cfcea4dd519502d Mehreen676 <mehrali676@gmail.com> 1768281760 +0400	commit: Phase III: Todo AI Chatbot with OpenAI Agents SDK and MCP tools
+758ea8494c6a94dbf064be7a8cfcea4dd519502d e7df38343b70b31a0bb92c8c64e368021032793b Mehreen676 <mehrali676@gmail.com> 1768282009 +0400	commit: Remove node_modules from git tracking
+e7df38343b70b31a0bb92c8c64e368021032793b 85f6c3c610faaf975713e906df3071a342ff58fa Mehreen676 <mehrali676@gmail.com> 1768282009 +0400	filter-branch: rewrite
+85f6c3c610faaf975713e906df3071a342ff58fa da5445867b8d8c418bc07250f17361a45307c164 Mehreen676 <mehrali676@gmail.com> 1768282215 +0400	commit: Phase III: Clean repo without node_modules

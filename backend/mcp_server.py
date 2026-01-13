@@ -1,0 +1,6 @@
+print("MCP Tools Specification:")
+print("1. add_task")
+print("2. list_tasks")
+print("3. complete_task")
+print("4. delete_task")
+print("5. update_task")

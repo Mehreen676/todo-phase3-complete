@@ -1,0 +1,9 @@
+name: hackathon-todo
+version: "1.0"
+phases:
+  - phase3-chatbot
+features:
+  - chatbot
+  - mcp-tools
+  - fastapi-backend
+  - nextjs-frontend
