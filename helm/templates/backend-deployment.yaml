@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-chatbot-backend
+  labels:
+    app: todo-chatbot
+    component: backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: todo-chatbot
+      component: backend
+  template:
+    metadata:
+      labels:
+        app: todo-chatbot
+        component: backend
+    spec:
+      containers:
+      - name: backend
+        image: hackathon-todo-backend:v1
+        imagePullPolicy: Never  # ← YEH LINE ADD KARO
+        ports:
+        - containerPort: 8000
+        env:
+        - name: DATABASE_URL
+          value: "sqlite:///./todo.db"
+        - name: OPENAI_API_KEY
+          value: "sk-dummy-123"
+        - name: BETTER_AUTH_SECRET
+          value: "secret123456789012345678901234567890"
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+          requests:
+            memory: "128Mi"
+            cpu: "100m"

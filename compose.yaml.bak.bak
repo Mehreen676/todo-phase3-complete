@@ -1,0 +1,32 @@
+services:
+  python-backend:
+    build:
+      context: ./backend
+    container_name: python-backend
+    restart: unless-stopped
+    init: true
+    # env_file: ./backend/.env  # Uncomment if ./backend/.env file exists
+    ports:
+      - "8000:8000"
+    networks:
+      - appnet
+    # The backend exposes FastAPI on port 8000
+
+  typescript-frontend:
+    build:
+      context: ./frontend
+    container_name: typescript-frontend
+    restart: unless-stopped
+    init: true
+    # env_file: ./frontend/.env  # Uncomment if ./frontend/.env file exists
+    ports:
+      - "3000:3000"
+    networks:
+      - appnet
+    depends_on:
+      - python-backend  # Ensure backend is up before frontend starts
+    # The frontend exposes Next.js on port 3000
+
+networks:
+  appnet:
+    driver: bridge

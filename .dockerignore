@@ -1,0 +1,102 @@
+# Version control
+.git/
+.git_backup/
+.gitignore
+.svn/
+.hg/
+
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.coverage
+
+# Node.js artifacts
+node_modules/
+npm-debug.log
+yarn-debug.log
+
+# Build outputs
+build/
+dist/
+out/
+
+# IDE/editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Test and debug files
+test/
+tests/
+*_test.go
+debug/
+*.log
+
+# Go artifacts
+/vendor/
+*.test
+.go-cache/
+
+# Java artifacts
+target/
+*.class
+.gradle/
+
+# Environment and secrets
+.env*
+*.env
+*.pem
+*.key
+*.crt
+config.local.*
+*.local.yml
+.local/
+local/
+
+# Documentation and specs
+docs/
+*.md
+README*
+CLAUDE.md
+
+# Docker and Compose files
+Dockerfile*
+docker-compose*
+compose.yaml*
+
+# Temporary and backup files
+tmp/
+temp/
+*.tmp
+*.bak
+
+# Project-specific
+.railwayignore
+
+# Frontend build artifacts
+frontend/.next/
+frontend/.vercel/
+
+# Backend virtual environments
+backend/venv/
+
+# Helm chart templates (if not needed in build)
+helm/
+
+# Spec files
+specs/
+
+# Ignore sample files
+*.sample
+
+# Ignore backup files
+*.bak
+
+# Ignore YAML files not needed in build
+*.yaml
+
+# Ignore JSON files not needed in build
+*.json

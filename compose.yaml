@@ -1,0 +1,35 @@
+services:
+  python-backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: python-backend
+    restart: unless-stopped
+    init: true  # Ensures proper signal handling and child process reaping
+    ports:
+      - "8000:8000"  # FastAPI backend
+    # env_file: ./backend/.env  # Uncomment if backend/.env file exists
+    networks:
+      - appnet
+    # No volumes configured; add if persistent storage is needed
+
+  typescript-frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: typescript-frontend
+    restart: unless-stopped
+    init: true  # Next.js benefits from init for graceful shutdown
+    ports:
+      - "3000:3000"  # Next.js frontend
+    # env_file: ./frontend/.env  # Uncomment if frontend/.env file exists
+    networks:
+      - appnet
+    depends_on:
+      - python-backend  # Ensures backend is up before frontend starts
+    # No volumes configured; add if persistent storage is needed
+
+# Network for internal communication between backend and frontend
+networks:
+  appnet:
+    driver: bridge

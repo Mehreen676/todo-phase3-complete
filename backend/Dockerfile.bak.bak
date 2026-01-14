@@ -1,0 +1,26 @@
+# syntax=docker/dockerfile:1
+
+FROM python:3.13-slim AS base
+WORKDIR /app
+
+# Builder stage: install dependencies in a venv
+FROM base AS builder
+COPY --link requirements.txt requirements.txt
+RUN --mount=type=cache,target=/root/.cache/pip \
+    python -m venv .venv && \
+    .venv/bin/pip install --upgrade pip && \
+    .venv/bin/pip install -r requirements.txt
+
+# Final stage: copy app code and venv, set up non-root user
+FROM base AS final
+# Create non-root user
+RUN addgroup --system appuser && adduser --system --ingroup appuser appuser
+USER appuser
+
+COPY --from=builder /app/.venv /app/.venv
+ENV PATH="/app/.venv/bin:$PATH"
+
+COPY --link . .
+
+EXPOSE 8000
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]

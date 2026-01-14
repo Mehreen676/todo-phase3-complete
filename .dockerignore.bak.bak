@@ -1,0 +1,79 @@
+# Version control
+.git/
+.git_backup/
+.gitignore
+.svn/
+.hg/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.coverage
+
+# Node.js / TypeScript
+node_modules/
+npm-debug.log
+yarn-debug.log
+.next/
+
+# Build outputs
+build/
+dist/
+out/
+
+# IDE/editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Test and debug
+*.log
+debug/
+test/
+tests/
+
+# Temporary files and folders
+tmp/
+temp/
+*.tmp
+
+# Environment and secrets
+.env
+.env.*
+*.env
+*.pem
+*.key
+*.crt
+
+# Local and config
+.local/
+local/
+config.local.*
+*.local.yml
+
+# Documentation
+*.md
+README*
+docs/
+
+# Docker and Compose
+Dockerfile*
+docker-compose*
+
+# Project-specific
+venv/
+.railwayignore
+
+# Helm and Kubernetes
+helm/
+
+# Miscellaneous
+*.bak
+minikube.exe.exe
+
+# Ignore public/ if empty (handled by !public/ in .gitignore, not needed here)
+# Ignore .vercel (deployment config, not needed in build context)
+.vercel/

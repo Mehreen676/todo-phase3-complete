@@ -1,0 +1,42 @@
+## Running the Project with Docker
+
+This project uses Docker Compose to orchestrate both the Python backend (FastAPI) and the TypeScript frontend (Next.js). Below are the instructions and requirements specific to this setup.
+
+### Project-Specific Requirements
+
+- **Backend**: Uses Python 3.13 (from `python:3.13-slim`). Dependencies are installed from `requirements.txt` in a virtual environment.
+- **Frontend**: Uses Node.js version 22.13.1 (from `node:22.13.1-slim`). Dependencies are managed via `npm ci` and built with Next.js.
+
+### Environment Variables
+
+- If you have environment variables for the backend or frontend, place them in `.env` files inside the respective `backend/` or `frontend/` directories.
+- In `docker-compose.yml`, the `env_file` lines are commented out. Uncomment them if you need to pass environment variables:
+  - `backend/.env` for the backend
+  - `frontend/.env` for the frontend
+
+### Build and Run Instructions
+
+1. **Build and start all services:**
+   ```sh
+   docker compose up --build
+   ```
+   This will build and start both the backend and frontend containers.
+
+2. **Access the services:**
+   - **Backend (FastAPI):** http://localhost:8000
+   - **Frontend (Next.js):** http://localhost:3000
+
+### Ports
+
+- **Backend:** Exposes port `8000` (FastAPI)
+- **Frontend:** Exposes port `3000` (Next.js)
+
+### Special Configuration
+
+- Both services run as non-root users for improved security.
+- No persistent volumes are configured by default. If you add a database or need persistent storage, update `docker-compose.yml` accordingly.
+- The backend and frontend are connected via the `appnet` Docker network for internal communication.
+
+---
+
+_If you update dependencies or environment variables, rebuild the containers with `docker compose up --build` to ensure changes are applied._

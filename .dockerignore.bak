@@ -1,0 +1,82 @@
+# Version control
+.git/
+.git_backup/
+.gitignore
+.svn/
+.hg/
+
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.coverage
+
+# Node.js/TypeScript artifacts
+node_modules/
+npm-debug.log
+yarn-debug.log
+.next/
+
+# Build outputs
+build/
+dist/
+out/
+
+# IDE/editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Test and debug files
+test/
+tests/
+*_test.go
+debug/
+*.log
+
+# Environment and secrets
+.env
+.env.*
+*.env
+*.pem
+*.key
+*.crt
+config.local.*
+*.local.yml
+
+# Project-specific and documentation
+docs/
+*.md
+README*
+
+# Docker and Compose files
+Dockerfile*
+docker-compose*
+
+# Temporary and local files
+tmp/
+temp/
+*.tmp
+.local/
+local/
+
+# Miscellaneous
+*.sample
+
+# Exclude virtual environments
+venv/
+
+# Exclude frontend build artifacts
+frontend/.vercel/
+
+# Exclude binaries
+*.exe
+*.exe.exe
+
+# Exclude Helm chart build artifacts (if any)
+helm/.helmignore
+
+# Exclude railway config
+.railwayignore
